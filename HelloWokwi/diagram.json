@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "author": "D'jihni Basil faujani",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0.6, "left": -0.6, "attrs": {} },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": -166.4,
+      "left": 332,
+      "attrs": { "pins": "i2c" }
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "ultrasonic1",
+      "top": -171.3,
+      "left": -148.1,
+      "attrs": { "distance": "2" }
+    }
+  ],
+  "connections": [
+    [ "lcd1:GND", "uno:GND.3", "black", [ "h-48", "v345.6", "h-109" ] ],
+    [ "lcd1:SDA", "uno:A4.2", "green", [ "h-240", "v115.4" ] ],
+    [ "lcd1:SCL", "uno:A5.2", "gray", [ "h-249.6", "v114.9" ] ],
+    [ "ultrasonic1:VCC", "uno:5V", "gold", [ "v297.6", "h179.2" ] ],
+    [ "lcd1:VCC", "uno:5V", "magenta", [ "h-28.8", "v374.5", "h-147.2" ] ],
+    [ "uno:7", "ultrasonic1:TRIG", "red", [ "v-38.4", "h-198" ] ],
+    [ "ultrasonic1:ECHO", "uno:8", "violet", [ "v38.4", "h171.6" ] ],
+    [ "ultrasonic1:GND", "uno:GND.2", "black", [ "v163.2", "h-1.2", "v182.4", "h216.9" ] ]
+  ],
+  "dependencies": {}
+}
